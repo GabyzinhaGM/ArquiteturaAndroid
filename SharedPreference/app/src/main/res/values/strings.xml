@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SharedPreference</string>
+    <string name="nome_produto">Digite o nome do produto:</string>
+    <string name="quantidade_produto">Digite a quantidade:</string>
+    <string name="salvar">Salvar</string>
+</resources>

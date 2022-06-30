@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/gabriela.marques/Desktop/ArquiteturaAndroid/Arquitetura/MovieFlix/app/src/main/res/layout/activity_login.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/gabriela.marques/Desktop/ArquiteturaAndroid/Arquitetura/MovieFlix/app/src/main/res/layout/activity_register.xml" value="0.14130434782608695" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2833333333333333" />
