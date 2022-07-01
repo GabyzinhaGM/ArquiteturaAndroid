@@ -1,0 +1,27 @@
+Modelagem da base de dados MovieFlixDB
+
+Quadrado 1:
+	Dentro contém a palavra Filme
+	círculo preto na lateral  com a palavra cod_filme
+	círculo na lateral com a palavra titulo
+	circulo na lateral com a pallavra imagem
+	circulo com a palavra descricao
+	circulo com a palavra genero
+
+(1,n) losango conectando ao  quadrado 2 
+
+Quadrado 2:
+	Dentro contém a  palavra Usuario
+	circulo preto na lateral com a palavra id
+	circulo na lateral com a palavra cpf
+	circulo na lateral com a palavra nome
+	circulo na lateral com a palavra email
+	circulo na lateral com a palavra senha
+
+Quadrado 3:
+dentro contém a palavra FilmeFavoritado
+	circulo preto na lateral com a palavra id
+	 circulo na lateral com a palavra  titulo
+	circulo na lateral com a palavra imagem
+
+(1,1) losango conectando ao quadrado 1
