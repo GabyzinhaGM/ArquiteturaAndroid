@@ -25,13 +25,11 @@ class MainActivity : AppCompatActivity() {
         binding.btnSalvar.setOnClickListener {
             salvarPrefs()
         }
-
     }
 
     private fun iniciarPrefs() {
         pref = getSharedPreferences("Shared", Context.MODE_PRIVATE)
         prefEditor = pref.edit()
-
     }
 
     private fun recuperarPrefs() {
@@ -39,9 +37,10 @@ class MainActivity : AppCompatActivity() {
         val nome = pref.getString("NOMEPRODUTO", "")
         val quantidade = pref.getInt("QUANTIDADEPRODUTO", 0)
 
-        binding.etNomeProduto.setText(nome)
-        binding.etQuantidadeProduto.setText(quantidade)
-
+        if (!nome.isNullOrEmpty() && quantidade > 0) {
+            binding.etNomeProduto.setText(nome)
+            binding.etQuantidadeProduto.setText("$quantidade")
+        }
     }
 
     private fun salvarPrefs() {
@@ -53,6 +52,4 @@ class MainActivity : AppCompatActivity() {
         prefEditor.apply()
 
     }
-
 }
-
