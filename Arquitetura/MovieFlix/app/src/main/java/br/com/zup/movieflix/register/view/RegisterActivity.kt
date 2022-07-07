@@ -38,7 +38,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun registerUser() {
         if (checkMatchingPasswords()) {
             viewModel.registerUser(
-                RegisterModel(
+                RegisterModel(1,
                     binding.etUserNameRegister.text.toString(),
                     binding.etEmailRegister.text.toString()
                 )
