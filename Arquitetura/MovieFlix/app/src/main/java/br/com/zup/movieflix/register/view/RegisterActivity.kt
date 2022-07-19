@@ -9,6 +9,7 @@ import br.com.zup.movieflix.databinding.ActivityRegisterBinding
 import br.com.zup.movieflix.home.view.HomeActivity
 import br.com.zup.movieflix.register.model.RegisterModel
 import br.com.zup.movieflix.register.viewmodel.RegisterViewModel
+import br.com.zup.movieflix.ui.ViewState
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -26,6 +27,7 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.bvLogin.setOnClickListener {
             registerUser()
+            viewModel.getAllMovies()
         }
     }
 
@@ -33,12 +35,28 @@ class RegisterActivity : AppCompatActivity() {
         viewModel.response.observe(this) {
             startActivity(Intent(this, HomeActivity::class.java))
         }
+
+        viewModel.movieListState.observe(this) {
+            when (it) {
+                is ViewState.Success -> {
+                    Toast.makeText(
+                        this@RegisterActivity,
+                        "Filmes ${it.data.size}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                is ViewState.Error -> {
+
+                }
+            }
+        }
     }
 
     private fun registerUser() {
         if (checkMatchingPasswords()) {
             viewModel.registerUser(
-                RegisterModel(1,
+                RegisterModel(
+                    1,
                     binding.etUserNameRegister.text.toString(),
                     binding.etEmailRegister.text.toString()
                 )
